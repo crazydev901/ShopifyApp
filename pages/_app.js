@@ -6,15 +6,15 @@ import { Provider as ReduxProvider } from "react-redux";
 import Cookies from "js-cookie";
 import "@shopify/polaris/styles.css";
 import translations from "@shopify/polaris/locales/en.json";
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "react-apollo";
+// import ApolloClient from "apollo-boost";
+// import { ApolloProvider } from "react-apollo";
 import withReduxStore from "../lib/with-redux-store";
 
-const client = new ApolloClient({
-  fetchOptions: {
-    credentials: "include"
-  }
-});
+// const client = new ApolloClient({
+//   fetchOptions: {
+//     credentials: "include"
+//   }
+// });
 
 class MyApp extends App {
   render() {
@@ -34,9 +34,9 @@ class MyApp extends App {
         <ReduxProvider store={reduxStore}>
           <Provider config={config}>
             <AppProvider i18n={translations}>
-              <ApolloProvider client={client}>
-                <Component {...pageProps} />
-              </ApolloProvider>
+              {/* <ApolloProvider client={client}> */}
+              <Component {...pageProps} />
+              {/* </ApolloProvider> */}
             </AppProvider>
           </Provider>
         </ReduxProvider>
